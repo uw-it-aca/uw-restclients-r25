@@ -26,7 +26,7 @@ setup(
                       'unittest2',
                       ],
     license='Apache License, Version 2.0',
-    description=('A library for connecting to the Office 365 API'),
+    description=('A library for connecting to the UW R25 API'),
     long_description=README,
     url="https://github.com/uw-it-aca/uw-restclients-r25",
     classifiers=[
@@ -35,6 +35,6 @@ setup(
         'Operating System :: OS Independent',
         'Programming Language :: Python',
         'Programming Language :: Python :: 2.7',
-        'Programming Language :: Python :: 3.4',
+        'Programming Language :: Python :: 3.6',
     ],
 )
