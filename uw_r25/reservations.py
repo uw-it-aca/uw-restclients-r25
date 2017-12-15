@@ -68,9 +68,8 @@ def reservations_from_xml(tree):
                                                    namespaces=nsmap)[0].text
             try:
                 anode = cnode.xpath("r25:address", namespaces=nsmap)[0]
-                reservation.contact_email = anode.xpath("r25:email",
-                                                        namespaces=nsmap)
-                [0].text
+                reservation.contact_email = anode.xpath(
+                    "r25:email", namespaces=nsmap)[0].text
             except IndexError:
                 reservation.contact_email = None
 
