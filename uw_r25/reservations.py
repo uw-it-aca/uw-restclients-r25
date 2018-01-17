@@ -8,7 +8,7 @@ except:
 
 
 def get_reservation_by_id(reservation_id):
-    url = "/r25ws/servlet/wrd/run/reservation.xml?rsrv_id=%s" % reservation_id
+    url = "reservation.xml?rsrv_id=%s" % reservation_id
     return reservations_from_xml(get_resource(url))[0]
 
 
@@ -19,7 +19,7 @@ def get_reservations(**kwargs):
     http://knowledge25.collegenet.com/display/WSW/reservations.xml
     """
     kwargs["scope"] = "extended"
-    url = "/r25ws/servlet/wrd/run/reservations.xml"
+    url = "reservations.xml"
     if len(kwargs):
         url += "?%s" % urlencode(kwargs)
 
@@ -68,9 +68,8 @@ def reservations_from_xml(tree):
                                                    namespaces=nsmap)[0].text
             try:
                 anode = cnode.xpath("r25:address", namespaces=nsmap)[0]
-                reservation.contact_email = anode.xpath("r25:email",
-                                                        namespaces=nsmap)
-                [0].text
+                reservation.contact_email = anode.xpath(
+                    "r25:email", namespaces=nsmap)[0].text
             except IndexError:
                 reservation.contact_email = None
 
