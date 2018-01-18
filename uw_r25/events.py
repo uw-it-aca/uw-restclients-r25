@@ -3,7 +3,7 @@ from uw_r25 import nsmap, get_resource
 from uw_r25.reservations import reservations_from_xml
 try:
     from urllib import urlencode, quote
-except:
+except ImportError:
     from urllib.parse import urlencode, quote
 
 

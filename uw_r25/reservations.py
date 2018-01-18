@@ -3,7 +3,7 @@ from uw_r25 import nsmap, get_resource
 from uw_r25.spaces import space_reservation_from_xml
 try:
     from urllib import urlencode
-except:
+except ImportError:
     from urllib.parse import urlencode
 
 
@@ -29,7 +29,7 @@ def get_reservations(**kwargs):
 def reservations_from_xml(tree):
     try:
         profile_name = tree.xpath("r25:profile_name", namespaces=nsmap)[0].text
-    except:
+    except Exception:
         profile_name = None
 
     reservations = []

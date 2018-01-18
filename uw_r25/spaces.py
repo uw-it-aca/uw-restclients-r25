@@ -2,7 +2,7 @@ from uw_r25.models import Space
 from uw_r25 import nsmap, get_resource
 try:
     from urllib import urlencode
-except:
+except ImportError:
     from urllib.parse import urlencode
 
 
