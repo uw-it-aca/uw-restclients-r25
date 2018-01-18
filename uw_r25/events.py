@@ -3,17 +3,17 @@ from uw_r25 import nsmap, get_resource
 from uw_r25.reservations import reservations_from_xml
 try:
     from urllib import urlencode, quote
-except:
+except ImportError:
     from urllib.parse import urlencode, quote
 
 
 def get_event_by_id(event_id):
-    url = "/r25ws/servlet/wrd/run/event.xml?event_id=%s" % event_id
+    url = "event.xml?event_id=%s" % event_id
     return events_from_xml(get_resource(url))[0]
 
 
 def get_event_by_alien_id(alien_id):
-    url = "/r25ws/servlet/wrd/run/event.xml?alien_uid=%s" % quote(alien_id)
+    url = "event.xml?alien_uid=%s" % quote(alien_id)
     event = events_from_xml(get_resource(url))
     return event[0] if event else None
 
@@ -24,7 +24,7 @@ def get_events(**kwargs):
     Supported kwargs are listed at
     http://knowledge25.collegenet.com/display/WSW/events.xml
     """
-    url = "/r25ws/servlet/wrd/run/events.xml"
+    url = "events.xml"
     if len(kwargs):
         url += "?%s" % urlencode(kwargs)
 

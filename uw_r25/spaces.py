@@ -2,12 +2,12 @@ from uw_r25.models import Space
 from uw_r25 import nsmap, get_resource
 try:
     from urllib import urlencode
-except:
+except ImportError:
     from urllib.parse import urlencode
 
 
 def get_space_by_id(space_id):
-    url = "/r25ws/servlet/wrd/run/space.xml?space_id=%s" % space_id
+    url = "space.xml?space_id=%s" % space_id
     return spaces_from_xml(get_resource(url))[0]
 
 
@@ -17,7 +17,7 @@ def get_spaces(**kwargs):
     Supported kwargs are listed at
     http://knowledge25.collegenet.com/display/WSW/spaces.xml
     """
-    url = "/r25ws/servlet/wrd/run/spaces.xml"
+    url = "spaces.xml"
     if len(kwargs):
         url += "?%s" % urlencode(kwargs)
 

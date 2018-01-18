@@ -11,3 +11,8 @@ class R25_DAO(DAO):
 
     def service_mock_paths(self):
         return [abspath(os.path.join(dirname(__file__), "resources"))]
+
+    def _custom_headers(self, method, url, headers, body):
+        basic_auth = self.get_service_setting('BASIC_AUTH')
+        if basic_auth is not None:
+            return {"Authorization": "Basic %s" % basic_auth}
