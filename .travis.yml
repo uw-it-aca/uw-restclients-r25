@@ -1,9 +1,6 @@
 sudo: false
 language: python
 python:
-- '2.7'
-- '3.4'
-- '3.5'
 - '3.6'
 before_script:
 - pip install -e .
@@ -13,7 +10,7 @@ before_script:
 - pip install commonconf
 - pip install python-coveralls
 script:
-- pycodestyle uw_r25/ --exclude=uw_r25/tests
+- pycodestyle uw_r25/
 - coverage run --source=uw_r25 uw_r25/test.py -v
 after_script:
 - coveralls
@@ -28,4 +25,4 @@ deploy:
     secure: qq5MdWsQd6/d/6oKOLTPcgxJ8i0d3ZAuvJcEx3UiHwEc4AQ7wRPnLkx6LfHaE6qJTbzuNPkDfa5MPBu2fN0wsWYqONg4ulY8sTKDVMuCxl0lMiwLXogYxFjNkDkgsn+8pdc9FfI9PozP4cEQAR62S2aoDdP5Fmpxv9vg/o5/NDXdQtw3qmkQTfAnqYRIA/868/hKhwKumdOP9IMKYS2VaxVNyw8oUWk8o8Xv1bI6wCteej3+RpsHblIyvQIfXXOPGIXLGD9m4K0yTAM16ibXhztr5Xo9VXiuWiT0P39mL6sJLzGor4rNvoyNrw0ikWW3e4B579brYwvPYljZGbzcIY9+WjwJZmfMAVVvPpm++kALcs+FT5CBRK+NICz0QmSvCHOZ4gLqIKLEDXGAwBmJ6ndkQzKDcQM+pSZVzVrTVASEGHYcneNzBYNWmwMh0bmfb5zvNoYtcE5FswVc82EoWRBxRzTTt2ef+4YW7zVqy4YYVIYP/vAixw+xHj+gcSD7WMbon+ZiydX2zM39vFnxpJXS9V+1ILDkdaFR22cSdC4Syka3VO2/Ylk/raRWKrzaTLtmuKXw4Usyn0mbuN7YdEJAJTyA6JklUvDCh04ny4L2rHGnQjLHP+xIhSu7flDipA87/bi2zUDn7T53Tddy4+NFJ+F2az2FpLiEBPq/V08=
   on:
     tags: true
-    python: '3.5'
+    python: '3.6'

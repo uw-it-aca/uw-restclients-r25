@@ -1,9 +1,6 @@
 from uw_r25.models import Space
 from uw_r25 import nsmap, get_resource
-try:
-    from urllib import urlencode
-except ImportError:
-    from urllib.parse import urlencode
+from urllib.parse import urlencode
 
 
 def get_space_by_id(space_id):

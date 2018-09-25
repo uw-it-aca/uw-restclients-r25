@@ -1,10 +1,7 @@
 from uw_r25.models import Event, BindingReservation
 from uw_r25 import nsmap, get_resource
 from uw_r25.reservations import reservations_from_xml
-try:
-    from urllib import urlencode, quote
-except ImportError:
-    from urllib.parse import urlencode, quote
+from urllib.parse import urlencode, quote
 
 
 def get_event_by_id(event_id):

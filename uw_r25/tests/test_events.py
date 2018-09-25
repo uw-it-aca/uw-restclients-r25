@@ -1,9 +1,8 @@
-from unittest import TestCase
+from unittest import TestCase, skipIf
 from commonconf import settings
 from uw_r25.events import get_event_by_id, get_events
-from restclients_core.exceptions import DataFailureException
-from unittest2 import skipIf
 from uw_r25.util import fdao_r25_override
+from restclients_core.exceptions import DataFailureException
 
 
 @fdao_r25_override
@@ -23,7 +22,8 @@ class R25TestEvents(TestCase):
         self.assertEquals(event.cabinet_name, event.name, "cabinet_name")
         self.assertEquals(event.state_name(), "Tentative", "state_name")
         self.assertEquals(len(event.reservations), 1, "reservations")
-        self.assertEquals(len(event.binding_reservations), 1, "binding_reservations")
+        self.assertEquals(
+            len(event.binding_reservations), 1, "binding_reservations")
 
     def test_parent_event(self):
         event = get_event_by_id("100002")
