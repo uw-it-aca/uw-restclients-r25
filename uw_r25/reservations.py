@@ -1,10 +1,7 @@
 from uw_r25.models import Reservation
 from uw_r25 import nsmap, get_resource
 from uw_r25.spaces import space_reservation_from_xml
-try:
-    from urllib import urlencode
-except ImportError:
-    from urllib.parse import urlencode
+from urllib.parse import urlencode
 
 
 def get_reservation_by_id(reservation_id):
