@@ -5,12 +5,12 @@ from urllib.parse import urlencode, quote
 
 
 def get_event_by_id(event_id):
-    url = "event.xml?event_id=%s" % event_id
+    url = "event.xml?event_id={}".format(event_id)
     return events_from_xml(get_resource(url))[0]
 
 
 def get_event_by_alien_id(alien_id):
-    url = "event.xml?alien_uid=%s" % quote(alien_id)
+    url = "event.xml?alien_uid={}".format(quote(alien_id))
     event = events_from_xml(get_resource(url))
     return event[0] if event else None
 
@@ -23,7 +23,7 @@ def get_events(**kwargs):
     """
     url = "events.xml"
     if len(kwargs):
-        url += "?%s" % urlencode(kwargs)
+        url += "?{}".format(urlencode(kwargs))
 
     return events_from_xml(get_resource(url))
 

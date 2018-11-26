@@ -4,7 +4,7 @@ from urllib.parse import urlencode
 
 
 def get_space_by_id(space_id):
-    url = "space.xml?space_id=%s" % space_id
+    url = "space.xml?space_id={}".format(space_id)
     return spaces_from_xml(get_resource(url))[0]
 
 
@@ -16,7 +16,7 @@ def get_spaces(**kwargs):
     """
     url = "spaces.xml"
     if len(kwargs):
-        url += "?%s" % urlencode(kwargs)
+        url += "?{}".format(urlencode(kwargs))
 
     return spaces_from_xml(get_resource(url))
 
