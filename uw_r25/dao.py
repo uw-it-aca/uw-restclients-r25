@@ -15,4 +15,4 @@ class R25_DAO(DAO):
     def _custom_headers(self, method, url, headers, body):
         basic_auth = self.get_service_setting('BASIC_AUTH')
         if basic_auth is not None:
-            return {"Authorization": "Basic %s" % basic_auth}
+            return {"Authorization": "Basic {}".format(basic_auth)}

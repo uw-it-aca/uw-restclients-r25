@@ -5,7 +5,7 @@ from urllib.parse import urlencode
 
 
 def get_reservation_by_id(reservation_id):
-    url = "reservation.xml?rsrv_id=%s" % reservation_id
+    url = "reservation.xml?rsrv_id={}".format(reservation_id)
     return reservations_from_xml(get_resource(url))[0]
 
 
@@ -18,7 +18,7 @@ def get_reservations(**kwargs):
     kwargs["scope"] = "extended"
     url = "reservations.xml"
     if len(kwargs):
-        url += "?%s" % urlencode(kwargs)
+        url += "?{}".format(urlencode(kwargs))
 
     return reservations_from_xml(get_resource(url))
 

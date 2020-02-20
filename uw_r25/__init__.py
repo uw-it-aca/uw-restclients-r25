@@ -15,9 +15,9 @@ def get_resource(url):
 
     instance = R25_DAO().get_service_setting('INSTANCE')
     if instance is not None:
-        url = "/r25ws/wrd/%s/run/%s" % (instance, url)
+        url = "/r25ws/wrd/{}/run/{}".format(instance, url)
     else:
-        url = "/r25ws/servlet/wrd/run/%s" % url
+        url = "/r25ws/servlet/wrd/run/{}".format(url)
 
     response = R25_DAO().getURL(url, {"Accept": "text/xml"})
     if response.status != 200:
