@@ -1,3 +1,6 @@
+# Copyright 2021 UW-IT, University of Washington
+# SPDX-License-Identifier: Apache-2.0
+
 from uw_r25.models import Reservation
 from uw_r25 import nsmap, get_resource
 from uw_r25.spaces import space_reservation_from_xml
