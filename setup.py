@@ -17,12 +17,12 @@ setup(
     name='UW-RestClients-R25',
     version=VERSION,
     packages=['uw_r25'],
-    author="UW-IT AXDD",
+    author="UW-IT T&LS",
     author_email="aca-it@uw.edu",
     include_package_data=True,
     install_requires=[
         'UW-RestClients-Core',
-        'lxml',
+        'lxml<5',
     ],
     license='Apache License, Version 2.0',
     description=('A library for connecting to the UW R25 API'),
@@ -33,6 +33,5 @@ setup(
         'License :: OSI Approved :: Apache Software License',
         'Operating System :: OS Independent',
         'Programming Language :: Python',
-        'Programming Language :: Python :: 3.6',
     ],
 )
