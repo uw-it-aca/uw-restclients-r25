@@ -1,4 +1,4 @@
-# Copyright 2021 UW-IT, University of Washington
+# Copyright 2024 UW-IT, University of Washington
 # SPDX-License-Identifier: Apache-2.0
 
 from unittest import TestCase
@@ -13,10 +13,10 @@ class R25TestSpaces(TestCase):
 
     def test_space_by_id(self):
         space = get_space_by_id("1000")
-        self.assertEquals(space.space_id, "1000", "space_id")
-        self.assertEquals(space.name, "ACC 120", "name")
-        self.assertEquals(space.formal_name, "Smith Hall", "formal_name")
+        self.assertEqual(space.space_id, "1000", "space_id")
+        self.assertEqual(space.name, "ACC 120", "name")
+        self.assertEqual(space.formal_name, "Smith Hall", "formal_name")
 
     def test_all_spaces(self):
         spaces = get_spaces()
-        self.assertEquals(len(spaces), 3, "space count")
+        self.assertEqual(len(spaces), 3, "space count")
