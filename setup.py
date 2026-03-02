@@ -17,11 +17,11 @@ setup(
     name='UW-RestClients-R25',
     version=VERSION,
     packages=['uw_r25'],
-    author="UW-IT T&LS",
+    author="UWIT Student & Educational Technology Services",
     author_email="aca-it@uw.edu",
     include_package_data=True,
     install_requires=[
-        'UW-RestClients-Core',
+        'uw-restclients-core',
         'lxml<5',
     ],
     license='Apache License, Version 2.0',
